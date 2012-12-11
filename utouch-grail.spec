@@ -82,3 +82,13 @@ find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
  
+
+
+%changelog
+* Tue Nov 01 2011 Matthew Dawkins <mattydaw@mandriva.org> 2.0.1-1
++ Revision: 709356
+- imported package utouch-grail
+
+
+* Sun Oct 30 2011 Matthew Dawkins <mdawkins@unity-linux.org> 2.0.1-1-unity2011
+- import for Unity

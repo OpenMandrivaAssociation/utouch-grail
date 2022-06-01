@@ -13,6 +13,8 @@ Source:         https://launchpad.net/grail/trunk/%{version}/+download/grail-%{v
 BuildRequires:  pkgconfig(mtdev)
 BuildRequires:  pkgconfig(evemu)
 BuildRequires:  pkgconfig(frame)
+BuildRequires:  pkgconfig(xorg-server)
+BuildRequires:  pkgconfig(x11)
  
 %description
 This tree consists of an interface and tools for handling gesture recognition
@@ -80,7 +82,7 @@ find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
 %files -n %{develname}
 %defattr(-,root,root)
-#{_includedir}/*.h
+%{_includedir}/oif/grail.h
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
  

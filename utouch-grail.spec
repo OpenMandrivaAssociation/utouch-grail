@@ -1,18 +1,18 @@
-%define major 1
+%define major 6
 %define libname %mklibname  %{name} %{major}
 %define develname   %mklibname  %{name} -d
 
 Name:           utouch-grail
-Version:        2.0.1
+Version:        3.1.1
 Release:        1
 License:        GPL-3.0
 Summary:        Gesture recognition library
 Url:            http://launchpad.net/utouch-grail
 Group:          Graphical desktop/Other
-Source:         %{name}-%{version}.tar.gz
+Source:         https://launchpad.net/grail/trunk/%{version}/+download/grail-%{version}.tar.bz2
 BuildRequires:  pkgconfig(mtdev)
-BuildRequires:  pkgconfig(utouch-evemu)
-BuildRequires:  pkgconfig(utouch-frame)
+BuildRequires:  pkgconfig(evemu)
+BuildRequires:  pkgconfig(frame)
  
 %description
 This tree consists of an interface and tools for handling gesture recognition
@@ -55,15 +55,15 @@ The library handles tentative getures, i.e., buffering of events for several
 alternative gestures until a match is confirmed.
  
 %prep
-%setup -q
+%autosetup -n grail-%{version} -p1
  
 %build
-%configure2_5x \
+%configure \
   --disable-static
-%make
+%make_build
  
 %install
-%makeinstall_std
+%make_install
 find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
  

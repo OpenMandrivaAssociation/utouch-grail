@@ -15,6 +15,7 @@ BuildRequires:  pkgconfig(evemu)
 BuildRequires:  pkgconfig(frame)
 BuildRequires:  pkgconfig(xorg-server)
 BuildRequires:  pkgconfig(x11)
+BuildRequires:  pkgconfig(xproto)
  
 %description
 This tree consists of an interface and tools for handling gesture recognition

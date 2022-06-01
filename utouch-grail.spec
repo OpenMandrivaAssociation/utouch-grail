@@ -58,6 +58,8 @@ alternative gestures until a match is confirmed.
 %autosetup -n grail-%{version} -p1
  
 %build
+export CC=gcc
+export CXX=g++
 %configure \
   --disable-static
 %make_build

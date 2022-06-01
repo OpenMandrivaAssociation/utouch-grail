@@ -1,18 +1,25 @@
-%define major 1
+%define major 6
 %define libname %mklibname  %{name} %{major}
 %define develname   %mklibname  %{name} -d
 
 Name:           utouch-grail
-Version:        2.0.1
+Version:        3.1.1
 Release:        1
 License:        GPL-3.0
 Summary:        Gesture recognition library
 Url:            http://launchpad.net/utouch-grail
 Group:          Graphical desktop/Other
-Source:         %{name}-%{version}.tar.gz
+Source:         https://launchpad.net/grail/trunk/%{version}/+download/grail-%{version}.tar.bz2
 BuildRequires:  pkgconfig(mtdev)
-BuildRequires:  pkgconfig(utouch-evemu)
-BuildRequires:  pkgconfig(utouch-frame)
+BuildRequires:  pkgconfig(evemu)
+BuildRequires:  pkgconfig(frame)
+BuildRequires:  pkgconfig(xorg-server)
+BuildRequires:  pkgconfig(x11)
+BuildRequires:  pkgconfig(xproto)
+#BuildRequires:  pkgconfig(xext)
+#BuildRequires:  pkgconfig(xi)
+
+Provides:     grail
  
 %description
 This tree consists of an interface and tools for handling gesture recognition
@@ -47,6 +54,7 @@ Summary:        Development files for gesture recognition library
 Group:          Development/C
 Requires:       %{libname} = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
+Provides:       grail-devel = %{version}-%{release}
  
 %description -n %{develname}
 Development files for the gesture recognition library (grail).
@@ -55,22 +63,24 @@ The library handles tentative getures, i.e., buffering of events for several
 alternative gestures until a match is confirmed.
  
 %prep
-%setup -q
+%autosetup -n grail-%{version} -p1
  
 %build
-%configure2_5x \
+export CC=gcc
+export CXX=g++
+%configure \
   --disable-static
-%make
+%make_build
  
 %install
-%makeinstall_std
+%make_install
 find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
  
 %files
 %defattr(-,root,root)
-%doc ChangeLog README COPYING
-%{_bindir}/grail-*
+%doc README COPYING
+#{_bindir}/grail-*
  
 %files -n %{libname}
 %defattr(-,root,root)
@@ -78,7 +88,7 @@ find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
 %files -n %{develname}
 %defattr(-,root,root)
-%{_includedir}/*.h
+%{_includedir}/oif/grail.h
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
  

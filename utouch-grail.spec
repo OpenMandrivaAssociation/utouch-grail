@@ -71,8 +71,8 @@ find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
 %files
 %defattr(-,root,root)
-%doc ChangeLog README COPYING
-%{_bindir}/grail-*
+%doc README COPYING
+#{_bindir}/grail-*
  
 %files -n %{libname}
 %defattr(-,root,root)

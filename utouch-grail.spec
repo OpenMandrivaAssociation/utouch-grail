@@ -16,8 +16,8 @@ BuildRequires:  pkgconfig(frame)
 BuildRequires:  pkgconfig(xorg-server)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xproto)
-BuildRequires:  pkgconfig(xext)
-BuildRequires:  pkgconfig(xi)
+#BuildRequires:  pkgconfig(xext)
+#BuildRequires:  pkgconfig(xi)
  
 %description
 This tree consists of an interface and tools for handling gesture recognition

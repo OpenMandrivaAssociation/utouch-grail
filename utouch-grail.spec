@@ -80,7 +80,7 @@ find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
  
 %files -n %{develname}
 %defattr(-,root,root)
-%{_includedir}/*.h
+#{_includedir}/*.h
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
  

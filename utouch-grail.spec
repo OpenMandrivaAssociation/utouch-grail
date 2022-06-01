@@ -18,6 +18,8 @@ BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xproto)
 #BuildRequires:  pkgconfig(xext)
 #BuildRequires:  pkgconfig(xi)
+
+Provides:     grail
  
 %description
 This tree consists of an interface and tools for handling gesture recognition
@@ -52,6 +54,7 @@ Summary:        Development files for gesture recognition library
 Group:          Development/C
 Requires:       %{libname} = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
+Provides:       grail-devel = %{version}-%{release}
  
 %description -n %{develname}
 Development files for the gesture recognition library (grail).

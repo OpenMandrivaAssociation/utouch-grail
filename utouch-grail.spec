@@ -7,7 +7,7 @@ Version:        3.1.1
 Release:        1
 License:        GPL-3.0
 Summary:        Gesture recognition library
-Url:            http://launchpad.net/utouch-grail
+Url:            https://launchpad.net/utouch-grail
 Group:          Graphical desktop/Other
 Source:         https://launchpad.net/grail/trunk/%{version}/+download/grail-%{version}.tar.bz2
 BuildRequires:  pkgconfig(mtdev)

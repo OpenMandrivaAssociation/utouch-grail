@@ -10,6 +10,11 @@ Summary:        Gesture recognition library
 Url:            https://launchpad.net/utouch-grail
 Group:          Graphical desktop/Other
 Source:         https://launchpad.net/grail/trunk/%{version}/+download/grail-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  pkgconfig(mtdev)
 BuildRequires:  pkgconfig(evemu)
 BuildRequires:  pkgconfig(frame)
